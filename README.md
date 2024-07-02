@@ -48,3 +48,8 @@ A Helm chart consists of:
 ### Linux
 ```bash
 curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-2 | bash
+```
+### Windows
+```bash
+curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-2 | bash
+```
