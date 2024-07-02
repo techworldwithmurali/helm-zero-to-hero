@@ -1,4 +1,8 @@
 # 8 Days of Helm Learning
+## Prerequisites:
+1. Windows/ Mac laptop
+2. Basic Linux Commands
+3. Kubernetes
 
 ## Day 1: Helm Basics
 
