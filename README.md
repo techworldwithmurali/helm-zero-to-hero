@@ -43,13 +43,11 @@ A Helm chart consists of:
 
 # Installation
 
-## Installation of Helm 2
-
-### Linux
+# Installing Helm 2 0r 3 on Linux
 ```bash
 curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-2 | bash
 ```
-# Installing Helm on Windows
+# Installing Helm 2 0r 3 on Windows
 
 ## Prerequisites
 Before installing Helm on Windows, ensure you have the following prerequisites:
