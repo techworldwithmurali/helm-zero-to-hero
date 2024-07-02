@@ -1,4 +1,4 @@
-# 6 Days of Helm Learning
+# 8 Days of Helm Learning
 
 ## Day 1: Helm Basics
 
@@ -49,7 +49,11 @@
 - How can I pass environment variables into a Helm Chart?
 - How do I create multiple values files within a Helm Chart?
 
-## Day 5: Helm 2 Part 1
+## Day 5: Deploying Applications with Helm 3
+
+- Deploy sample application using Helm 3
+
+## Day 6: Helm 2 Part 1
 
 - Helm 2 Commands:
   - `helm version`
@@ -64,7 +68,7 @@
   - `helm inspect`
   - `helm delete`
 
-## Day 6: Helm 2 Part 2
+## Day 7: Helm 2 Part 2
 
 - Helm 2 Commands:
   - `helm get`
@@ -73,3 +77,7 @@
   - `helm dependency`
   - `helm lint`
   - `helm repo`
+
+## Day 8: Helm 2 Advanced
+
+- Deploy sample application using Helm 2
