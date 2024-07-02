@@ -78,6 +78,6 @@
   - `helm lint`
   - `helm repo`
 
-## Day 8: Helm 2 Advanced
+## Day 8: Deploying Applications with Helm 2
 
 - Deploy sample application using Helm 2
