@@ -187,4 +187,3 @@ To manage multiple sets of configuration values in Helm, use multiple `values-*.
    ```
 
    This approach allows you to manage different configurations for different environments or use cases within your Helm charts effectively.
-```
