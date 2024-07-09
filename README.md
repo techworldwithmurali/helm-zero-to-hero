@@ -100,7 +100,6 @@ service:
   annotations:
     loadBalancerSubnets: "subnet-028dc499437b2b83f,subnet-0f349567f5fec79de"
 ```
-5. Deploy the Helm Chart
 # Passing Environment Variables into a Helm Chart
 
 To pass environment variables into a Helm Chart, define them in your `values.yaml` file and use them in your Kubernetes manifests:
