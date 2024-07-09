@@ -1,3 +1,16 @@
+# Helm Overview
+
+Helm is a package manager for Kubernetes, designed to simplify the process of installing and managing applications on Kubernetes clusters.
+
+## Helm 2 (Helm Classic)
+
+Helm 2, also known as Helm Classic, was the previous major version of Helm. It operated with a client-server architecture:
+
+- **Client**: The Helm client (`helm`) interacts with the Kubernetes cluster.
+- **Server**: Tiller, the server component, runs inside the Kubernetes cluster.
+
+Helm 2 was widely used until Helm 3 was released in 2019.
+
 ## Helm 2 Commands
 
 ### helm version
