@@ -63,7 +63,7 @@ spec:
    ```
 
 4. **Converted Helm Chart YAML (`templates/service.yaml`):**
-   ```yaml
+```yaml
 apiVersion: v1
 kind: Service
 metadata:
