@@ -1,7 +1,7 @@
 To convert Kubernetes YAML files into Helm Chart YAML, follow these steps:
 
 1. **Deployment  YAML in Kubernetes (`deployment.yaml`):**
-  ```yaml
+```yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -22,7 +22,7 @@ spec:
         image: nginx:latest
 ```
 2. **Converted Helm Chart YAML (`templates/deployment.yaml`):**
-   ```yaml
+```yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
