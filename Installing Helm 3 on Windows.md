@@ -1,4 +1,4 @@
-# Installing Helm 2 0r 3 on Windows
+# Installing Helm 3 on Windows
 
 ## Prerequisites
 Before installing Helm on Windows, ensure you have the following prerequisites:
