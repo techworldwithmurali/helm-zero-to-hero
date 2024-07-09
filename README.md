@@ -12,7 +12,7 @@
 - Difference between Helm 2 and Helm 3
 - Helm Chart Structure
 - Installation of Helm 3:
-  - Linux [Linux ](https://github.com/techworldwithmurali/helm-zero-to-hero/blob/day-1/Installing%20Helm%202%20on%20Linux.md)
+  - [Linux Installation steps ](https://github.com/techworldwithmurali/helm-zero-to-hero/blob/day-1/Installing%20Helm%202%20on%20Linux.md)
   - Windows
 
 ## Day 2: Helm 3 Commands Part 1
