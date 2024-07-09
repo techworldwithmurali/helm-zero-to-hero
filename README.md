@@ -11,10 +11,6 @@
 - Without and With Helm Chart
 - Difference between Helm 2 and Helm 3
 - Helm Chart Structure
-- Installation of Helm
-- Installation of Helm 2:
-  - Linux
-  - Windows
 - Installation of Helm 3:
   - Linux
   - Windows
@@ -58,7 +54,10 @@
 - Deploy sample application using Helm 3
 
 ## Day 6: Helm 2 Part 1
-
+- What is Helm 2
+- Installation of Helm 2:
+  - Linux
+  - Windows
 - Helm 2 Commands:
   - `helm version`
   - `helm init`
