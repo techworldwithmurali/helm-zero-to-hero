@@ -47,6 +47,7 @@ metadata:
   name: tiller
   namespace: kube-system
 ```
+###### kubectl apply -f service-account.yaml
 
 **ClusterRoleBinding.yaml:**
 ```yaml
@@ -63,6 +64,7 @@ subjects:
     name: tiller
     namespace: kube-system
 ```
+###### kubectl apply -f ClusterRoleBinding.yaml
 
 ### Step 4: Deploy Tiller and Initialize Helm
 ```bash
