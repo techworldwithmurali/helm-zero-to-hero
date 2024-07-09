@@ -15,7 +15,7 @@
   - Linux
   - Windows
 
-## Day 2: Helm 3 Part 1
+## Day 2: Helm 3 Commands Part 1
 
 - Create your first Helm Chart
 - Helm 3 commands Part 1:
@@ -27,7 +27,7 @@
   - `helm rollback`
   - `helm uninstall`
 
-## Day 3: Helm 3 Part 2
+## Day 3: Helm 3 Commands  Part 2
 
 - Helm 3 commands Part 2:
   - `helm get`
@@ -43,17 +43,17 @@
   - `helm completion`
   - `helm test`
 
-## Day 4: Helm 3 Advanced
+## Day 4: Mastering Helm Charts
 
 - How do I convert Kubernetes YAML into Helm Chart YAML?
 - How can I pass environment variables into a Helm Chart?
 - How do I create multiple values files within a Helm Chart?
 
-## Day 5: Deploying Applications with Helm 3
+## Day 5: Deploy a sample application in Kubernetes using Helm 3
 
 - Deploy sample application using Helm 3
 
-## Day 6: Helm 2 Part 1
+## Day 6: Helm 2 Commands Part 1
 - What is Helm 2
 - Installation of Helm 2:
   - Linux
@@ -71,7 +71,7 @@
   - `helm inspect`
   - `helm delete`
 
-## Day 7: Helm 2 Part 2
+## Day 7: Helm 2 Commands Part 2
 
 - Helm 2 Commands:
   - `helm get`
@@ -81,6 +81,6 @@
   - `helm lint`
   - `helm repo`
 
-## Day 8: Deploying Applications with Helm 2
+## Day 8: Deploy a sample application in Kubernetes using Helm 2
 
 - Deploy sample application using Helm 2
