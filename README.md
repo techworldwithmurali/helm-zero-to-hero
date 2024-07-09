@@ -43,33 +43,43 @@ spec:
         image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
 ```
 3. **Converted Helm Chart YAML (`templates/service.yaml`):**
-   ```yaml
-   apiVersion: v1
-   kind: Service
-   metadata:
-     name: my-service
-   spec:
-     selector:
-       app: my-app
-     ports:
-       - protocol: TCP
-         port: 80
-         targetPort: 8080
+```yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-app-service
+  namespace: dev
+  annotations:
+    service.beta.kubernetes.io/aws-load-balancer-subnets: subnet-028dc499437b2b83f,subnet-0f349567f5fec79de
+spec:
+  selector:
+    app: my-app
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+  type: LoadBalancer
+
    ```
 
 4. **Converted Helm Chart YAML (`templates/service.yaml`):**
    ```yaml
-   apiVersion: v1
-   kind: Service
-   metadata:
-     name: {{ .Release.Name }}-service
-   spec:
-     selector:
-       app: {{ .Release.Name }}
-     ports:
-       - protocol: TCP
-         port: {{ .Values.service.port }}
-         targetPort: {{ .Values.service.targetPort }}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Release.Name }}-my-app-service
+  namespace: {{ .Values.namespace }}
+  annotations:
+    service.beta.kubernetes.io/aws-load-balancer-subnets: {{ .Values.service.annotations.loadBalancerSubnets }}
+spec:
+  selector:
+    app: {{ .Release.Name }}-my-app
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+  type: LoadBalancer
+  
    ```
 
    Replace `.Release.Name`, `.Values.service.port`, and `.Values.service.targetPort` with appropriate values from your Helm chart `values.yaml` file.
