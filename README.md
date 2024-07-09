@@ -105,36 +105,51 @@ service:
 To pass environment variables into a Helm Chart, define them in your `values.yaml` file and use them in your Kubernetes manifests:
 
 1. **Define variables in `values.yaml`:**
-   ```yaml
-   env:
-     database:
-       host: db-hostname
-       port: 5432
-       username: root
-       password: password123
+```yaml
+replicaCount: 3
+
+image:
+  repository: nginx
+  tag: latest
+
+namespace: dev
+
+env:
+  - name: MY_ENV_VAR1
+    value: "value1"
+  - name: MY_ENV_VAR2
+    value: "value2"
+
+service:
+  annotations:
+    loadBalancerSubnets: "subnet-028dc499437b2b83f,subnet-0f349567f5fec79de
    ```
 
 2. **Use them in a Deployment manifest (`templates/deployment.yaml`):**
-   ```yaml
-   apiVersion: apps/v1
-   kind: Deployment
-   metadata:
-     name: my-app
-   spec:
-     template:
-       spec:
-         containers:
-           - name: my-app
-             image: my-image:latest
-             env:
-               - name: DB_HOST
-                 value: {{ .Values.env.database.host }}
-               - name: DB_PORT
-                 value: {{ .Values.env.database.port | quote }}
-               - name: DB_USERNAME
-                 value: {{ .Values.env.database.username }}
-               - name: DB_PASSWORD
-                 value: {{ .Values.env.database.password }}
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-my-app
+  namespace: {{ .Values.namespace }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}-my-app
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name }}-my-app
+    spec:
+      containers:
+      - name: my-app-container
+        image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+        env:
+          {{- range .Values.env }}
+          - name: {{ .name }}
+            value: {{ .value | quote }}
+          {{- end }}
    ```
 
    Replace `.Values.env.database.host`, `.Values.env.database.port`, `.Values.env.database.username`, and `.Values.env.database.password` with appropriate values from your Helm chart `values.yaml` file.
