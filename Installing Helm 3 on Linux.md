@@ -1,7 +1,6 @@
 # Helm3 Installation in Linux
 
 ## Steps:
-### Step 1: Install Helm3
 1.1: Download the tar file from the Helm release page:
 - Visit [Helm Releases](https://github.com/helm/helm/releases)
 - Example direct download link: [helm-v3.15.2-linux-amd64.tar.gz](https://get.helm.sh/helm-v3.15.2-linux-amd64.tar.gz)
