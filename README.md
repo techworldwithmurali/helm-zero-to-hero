@@ -73,7 +73,24 @@ spec:
    ```
 
    Replace `.Release.Name`, `.Values.service.port`, and `.Values.service.targetPort` with appropriate values from your Helm chart `values.yaml` file.
+   
+### Define Values in values.yaml
+Edit the values.yaml file in the my-app directory to include the necessary values:
 
+   ```yaml
+replicaCount: 3
+
+image:
+  repository: nginx
+  tag: latest
+
+namespace: dev
+
+service:
+  annotations:
+    loadBalancerSubnets: "subnet-028dc499437b2b83f,subnet-0f349567f5fec79de"
+```
+5. Deploy the Helm Chart
 # Passing Environment Variables into a Helm Chart
 
 To pass environment variables into a Helm Chart, define them in your `values.yaml` file and use them in your Kubernetes manifests:
