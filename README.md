@@ -1,6 +1,48 @@
 To convert Kubernetes YAML files into Helm Chart YAML, follow these steps:
 
-1. **Service YAML in Kubernetes (`service.yaml`):**
+1. **Deployment  YAML in Kubernetes (`deployment.yaml`):**
+  ```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-app
+  namespace: dev
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: my-app
+  template:
+    metadata:
+      labels:
+        app: my-app
+    spec:
+      containers:
+      - name: my-app-container
+        image: nginx:latest
+```
+2. **Converted Helm Chart YAML (`templates/deployment.yaml`):**
+   ```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-my-app
+  namespace: {{ .Values.namespace }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}-my-app
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name }}-my-app
+    spec:
+      containers:
+      - name: my-app-container
+        image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+```
+3. **Converted Helm Chart YAML (`templates/service.yaml`):**
    ```yaml
    apiVersion: v1
    kind: Service
@@ -15,7 +57,7 @@ To convert Kubernetes YAML files into Helm Chart YAML, follow these steps:
          targetPort: 8080
    ```
 
-2. **Converted Helm Chart YAML (`templates/service.yaml`):**
+4. **Converted Helm Chart YAML (`templates/service.yaml`):**
    ```yaml
    apiVersion: v1
    kind: Service
