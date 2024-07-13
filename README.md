@@ -1,48 +1,49 @@
-## Helm 3 Commands Part 1
-### helm create
-**helm create:** Creates a new Helm chart structure. 
-For example:
-```bash
-helm create microservice-one
-```
-### helm install 
-**helm install:** Installs a chart onto the Kubernetes cluster. For example:
-```bash
-helm install my-app ./microservice-one
-```
-### helm list
+# Helm 3 Commands Part 1
 
-**helm list:** Lists all releases deployed to the cluster. For example:
-```bash
-helm list
-```
-### helm status
+1. **Creating a Helm Chart:**
+    ```bash
+    helm create microservice-one
+    ```
+    **Explanation:** This command generates a new Helm chart named `microservice-one`. It creates the necessary directory structure and template files to define your Kubernetes application.
 
-**helm status:** Displays the status of a deployed release. For example:
-```bash
-helm status my-app
-```
+2. **Installing a Helm Chart:**
+    ```bash
+    helm install ms-one microservice-one
+    ```
+    **Explanation:** This command installs the Helm chart `microservice-one` with the release name `ms-one` into your Kubernetes cluster. It deploys the application defined in the Helm chart.
 
-### helm history
-**helm history:** Shows the revision history of a release. For example:
-```bash
-helm history my-app
-```
-### helm upgrade
+3. **Listing Installed Helm Releases:**
+    ```bash
+    helm list
+    ```
+    **Explanation:** This command lists all the Helm releases currently deployed in your Kubernetes cluster. It displays the release names, chart names, namespaces, and statuses.
 
-**helm upgrade:** Upgrades a release to a new version of a chart. For example:
-```bash
-helm upgrade my-app ./microservice-one
-```
+4. **Checking the Status of a Release:**
+    ```bash
+    helm status ms-one
+    ```
+    **Explanation:** This command shows the status of the Helm release `ms-one`. It provides details about the deployed resources, their current status, and any related notes or outputs.
 
-### helm rollback
-**helm rollback:** Rolls back a release to a previous revision. For example:
-```bash
-helm rollback my-app 1
-```
-### helm uninstall
+5. **Viewing the History of a Release:**
+    ```bash
+    helm history ms-one
+    ```
+    **Explanation:** This command displays the deployment history of the Helm release `ms-one`, including all revisions. It shows when each revision was deployed and their statuses.
 
-**helm uninstall:** Uninstalls a release from the cluster. For example:
-```bash
-helm uninstall my-app
-```
+6. **Upgrading a Helm Release:**
+    ```bash
+    helm upgrade ms-one microservice-one
+    ```
+    **Explanation:** This command upgrades the Helm release `ms-one` to the latest version of the `microservice-one` chart. It applies any changes or updates made to the Helm chart or its values.
+
+7. **Helm Rollback: Reverting Changes in Chart Deployment:**
+    ```bash
+    helm rollback ms-one 1
+    ```
+    **Explanation:** This command rolls back the Helm release `ms-one` to revision `1`. It reverts the deployment to the state it was in after the first deployment, useful for undoing problematic updates.
+
+8. **Uninstalling a Helm Release:**
+    ```bash
+    helm uninstall ms-one
+    ```
+    **Explanation:** This command uninstalls the Helm release `ms-one` from the Kubernetes cluster. It removes all resources associated with the release, effectively deleting the deployed application.
