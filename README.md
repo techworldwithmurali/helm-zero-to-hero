@@ -43,5 +43,5 @@ A Helm chart consists of:
 
 # Installation
 
-# Installing Helm 3 on Linux
-# Installing Helm 3 on Windows
+#### Installing Helm 3 on Linux
+#### Installing Helm 3 on Windows
