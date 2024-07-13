@@ -1,85 +1,126 @@
-# Helm Commands Cheat Sheet (Part 2)
+## Helm 3 Commands Part 2
 
-## helm get
-Displays information about a named release. For example:
+### `helm get`
+- **Subcommands:**
+  - `hooks`: Get hooks for a release.
+  - `manifest`: Get the manifest for a named release.
+  - `notes`: Get the notes for a release.
+  - `values`: Get the values that were used to install a release.
+  
+  **Example:**
+  ```bash
+  helm get manifest my-release
+  ```
+  This command retrieves the manifest (YAML definition) of the resources deployed by the release named `my-release`.
 
-```bash
-helm get manifest ms-one
-```
+### `helm show`
+- **Subcommands:**
+  - `all`: Show all information of a chart.
+  - `chart`: Show the chart definition.
+  - `readme`: Show the README file of a chart.
+  
+  **Example:**
+  ```bash
+  helm show readme stable/mysql
+  ```
+  This command displays the README of the `stable/mysql` chart.
 
-## helm show
-Shows chart details such as the README, values, or templates. For example:
+### `helm env`
+- **Subcommands:**
+  - `subst`: Substitutes environment variables in Helm manifests.
+  
+  **Example:**
+  ```bash
+  helm env subst mychart/
+  ```
+  This command substitutes environment variables in the Helm manifests found in the `mychart/` directory.
 
-```bash
-helm show readme microservice-one
-```
+### `helm template`
+- **Subcommands:**
+  - N/A (No subcommands for `helm template`)
 
-## helm env
-Displays the Helm client environment information. For example:
+  **Example:**
+  ```bash
+  helm template my-release stable/mysql
+  ```
+  This command renders the Helm chart `stable/mysql` into Kubernetes YAML manifests and prints the result to stdout.
 
-```bash
-helm env
-```
+### `helm lint`
+- **Subcommands:**
+  - N/A (No subcommands for `helm lint`)
 
-## helm template
-Generates Kubernetes YAML from a Helm chart without installing it. For example:
+  **Example:**
+  ```bash
+  helm lint mychart/
+  ```
+  This command checks the syntax of the Helm chart `mychart/` for possible issues.
 
-```bash
-helm template ms-one ./microservice-one
-```
+### `helm package`
+- **Subcommands:**
+  - N/A (No subcommands for `helm package`)
 
-## helm lint
-Checks a chart for possible issues. For example:
+  **Example:**
+  ```bash
+  helm package mychart/
+  ```
+  This command packages the Helm chart `mychart/` into a versioned chart archive file (`mychart-1.2.3.tgz`).
 
-```bash
-helm lint ./microservice-one
-```
+### `helm dependency`
+- **Subcommands:**
+  - `build`: Rebuild the charts/ directory based on the Chart.lock file.
+  - `list`: List the dependencies for the given chart.
+  - `update`: Update charts/ based on the contents of Chart.yaml.
 
-## helm package
-Packages a chart directory into a chart archive (tgz). For example:
+  **Example:**
+  ```bash
+  helm dependency build mychart/
+  ```
+  This command rebuilds the `charts/` directory for the Helm chart `mychart/` based on the `Chart.lock` file.
 
-```bash
-helm package ./microservice-one
-```
+### `helm repo`
+- **Subcommands:**
+  - `add`: Add a chart repository.
+  - `index`: Generate an index file given a directory containing packaged charts.
+  - `list`: List chart repositories.
+  - `remove`: Remove one or more chart repositories.
+  - `update`: Update information of available charts locally from chart repositories.
 
-## helm dependency
-Manages chart dependencies. For example:
+  **Example:**
+  ```bash
+  helm repo list
+  ```
+  This command lists all the added chart repositories.
 
-```bash
-helm dependency update ./microservice-one
-```
+### `helm search`
+- **Subcommands:**
+  - `hub`: Search for charts in the Artifact Hub or your own hub instance.
+  - `repo`: Search repositories for a keyword in charts.
 
-## helm repo
-Manages Helm chart repositories. For example:
+  **Example:**
+  ```bash
+  helm search hub wordpress
+  ```
+  This command searches for charts related to `wordpress` in the Artifact Hub.
 
-```bash
-helm repo add stable https://charts.helm.sh/stable
-```
+### `helm plugin`
+- **Subcommands:**
+  - `install`: Install one or more Helm plugins.
+  - `list`: List installed Helm plugins.
+  - `uninstall`: Uninstall one or more Helm plugins.
+  - `update`: Update one or more Helm plugins.
 
-## helm search
-Searches for Helm charts in repositories. For example:
+  **Example:**
+  ```bash
+  helm plugin list
+  ```
+  This command lists all installed Helm plugins.
 
-```bash
-helm search repo wordpress
-```
+### `helm completion`
+- **Subcommands:**
+  - N/A (No subcommands for `helm completion`)
 
-## helm plugin
-Manages Helm plugins. For example:
-
-```bash
-helm plugin list
-```
-
-## helm completion
-Generates shell completion scripts for Helm commands. For example:
-
-```bash
-helm completion bash
-```
-
-## helm test
-Runs tests defined in a chart. For example:
-
-```bash
-helm test ms-one
-```
+  **Example:**
+  ```bash
+  helm completion bash
+  ```
+  This command generates the Bash completion script for Helm.
