@@ -3,31 +3,31 @@
 ### helm get
 Retrieves information about a named release.
 ```bash
-helm get my-release
+helm get ms-one
 ```
 
 ### helm template
 Generates Kubernetes manifest files from a Helm chart, but does not install anything.
 ```bash
-helm template ./mychart
+helm template ./microservice-one
 ```
 
 ### helm verify
 Verifies that a chart at the given path has been signed and can be trusted.
 ```bash
-helm verify ./mychart
+helm verify ./microservice-one
 ```
 
 ### helm dependency
 Manages chart dependencies.
 ```bash
-helm dependency update ./mychart
+helm dependency update ./microservice-one
 ```
 
 ### helm lint
 Checks a chart for possible issues.
 ```bash
-helm lint ./mychart
+helm lint ./microservice-one
 ```
 
 ### helm repo
