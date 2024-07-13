@@ -13,70 +13,90 @@ Helm 2 was widely used until Helm 3 was released in 2019.
 
 ## Helm 2 Commands
 
-### helm version
-Displays the Helm client and server versions.
-```bash
-helm version
-```
+1. **`helm version`**
+   - Displays the version of Helm client and server.
 
-### helm init
-Initializes Helm on both client and server. Note: Helm 2 is deprecated, consider using Helm 3.
-```bash
-helm init
-```
+   **Example:**
+   ```bash
+   helm version
+   ```
 
-### helm create
-Creates a new Helm chart structure.
-```bash
-helm create mychart
-```
+2. **`helm init`**
+   - Initializes Helm on both client and server. This command installs Tiller (Helm's server-side component) into your Kubernetes cluster.
 
-### helm install
-Installs a chart onto the Kubernetes cluster.
-```bash
-helm install my-release ./mychart
-```
+   **Example:**
+   ```bash
+   helm init
+   ```
 
-### helm list
-Lists all releases deployed to the cluster.
-```bash
-helm list
-```
+3. **`helm create`**
+   - Creates a new chart with the given name.
 
-### helm status
-Displays the status of a deployed release.
-```bash
-helm status my-release
-```
+   **Example:**
+   ```bash
+   helm create microservice-one
+   ```
 
-### helm upgrade
-Upgrades a release to a new version of a chart.
-```bash
-helm upgrade my-release ./mychart
-```
+4. **`helm install`**
+   - Installs a chart into your Kubernetes cluster.
 
-### helm rollback
-Rolls back a release to a previous revision.
-```bash
-helm rollback my-release 1
-```
+   **Example:**
+   ```bash
+   helm install microservice-one
+   ```
 
-### helm history
-Shows the revision history of a release.
-```bash
-helm history my-release
-```
+5. **`helm list`**
+   - Lists releases of deployed charts.
 
-### helm inspect
-Shows detailed information about a chart.
-```bash
-helm inspect mychart
-```
+   **Example:**
+   ```bash
+   helm list
+   ```
 
-### helm delete
-Deletes a named release.
-```bash
-helm delete my-release
-```
+6. **`helm status`**
+   - Displays the status of a named release.
 
-Note: Helm 2 is deprecated; it's recommended to use Helm 3 for new projects and migrate existing Helm 2 setups to Helm 3.
+   **Example:**
+   ```bash
+   helm status ms-one
+   ```
+
+7. **`helm upgrade`**
+   - Upgrades a release to a new version of a chart.
+
+   **Example:**
+   ```bash
+   helm upgrade ms-one microservice-one
+   ```
+
+8. **`helm rollback`**
+   - Rolls back a release to a previous revision.
+
+   **Example:**
+   ```bash
+   helm rollback ms-one 1
+   ```
+
+9. **`helm history`**
+   - Displays the history of revisions for a release.
+
+   **Example:**
+   ```bash
+   helm history ms-one
+   ```
+
+10. **`helm inspect`**
+    - Inspects a chart by rendering its templates.
+
+    **Example:**
+    ```bash
+    helm inspect values microservice-one
+    ```
+
+11. **`helm delete`**
+    - Deletes a named release.
+
+    **Example:**
+    ```bash
+    helm delete ms-one
+    ```
