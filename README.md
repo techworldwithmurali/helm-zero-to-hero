@@ -4,14 +4,14 @@
 Displays information about a named release. For example:
 
 ```bash
-helm get manifest my-app
+helm get manifest ms-one
 ```
 
 ## helm show
 Shows chart details such as the README, values, or templates. For example:
 
 ```bash
-helm show readme my-chart
+helm show readme microservice-one
 ```
 
 ## helm env
@@ -25,28 +25,28 @@ helm env
 Generates Kubernetes YAML from a Helm chart without installing it. For example:
 
 ```bash
-helm template my-app ./my-chart
+helm template ms-one ./microservice-one
 ```
 
 ## helm lint
 Checks a chart for possible issues. For example:
 
 ```bash
-helm lint ./my-chart
+helm lint ./microservice-one
 ```
 
 ## helm package
 Packages a chart directory into a chart archive (tgz). For example:
 
 ```bash
-helm package ./my-chart
+helm package ./microservice-one
 ```
 
 ## helm dependency
 Manages chart dependencies. For example:
 
 ```bash
-helm dependency update ./my-chart
+helm dependency update ./microservice-one
 ```
 
 ## helm repo
@@ -81,5 +81,5 @@ helm completion bash
 Runs tests defined in a chart. For example:
 
 ```bash
-helm test my-app
+helm test ms-one
 ```
