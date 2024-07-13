@@ -46,6 +46,7 @@ A Helm chart consists of:
 - **Charts/**: Dependency charts (if any).
 - **README.md**: Documentation for the chart.
 
+![With Helm Chart - Tech World with Murali - Moole Muralidhara Reddy.png](https://github.com/techworldwithmurali/helm-zero-to-hero/blob/main/Day-1/images/Day%20%201-%20With%20Helm%20chart-%20Moole%20Muralidhara%20Reddy%20-%20Tech%20World%20with%20Murali.png)
 ---
 
 # Installation
