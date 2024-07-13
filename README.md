@@ -45,4 +45,11 @@ docker login
 ```xml
 docker push mmreddy424/web-application:latest
 ```
-### Step 8: Verify whether docker image is pushed or not in DockerHub
+### Step 9: Verify whether docker image is pushed or not in DockerHub
+### Step 10 : Create the helm chart and update the helm chart files.
+### Step 11: Connect to the AWS EKS Cluster
+### Step 12: Install the helm chart using helm command.
+### Step 13: Access Java application through NodePort.
+
+
+#### You have successfully Deployed the Java application in Kubernetes(AWS EKS) through Helm Chart.
