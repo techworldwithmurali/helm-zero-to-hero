@@ -1,4 +1,4 @@
-## Deploy the application in EKS using a Helm chart fetching the image from DockerHub
+## Deploy the application in EKS using a Helm chart fetching the image from AWS ECR
 
 ### Prerequisites:
 + Git is installed
