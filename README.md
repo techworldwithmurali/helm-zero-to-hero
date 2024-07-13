@@ -81,6 +81,6 @@
   - `helm lint`
   - `helm repo`
 
-## Day 8: Deploy the application in EKS using a Helm chart fetching the image from DockerHub
-## Day 9: Deploy the application in EKS using a Helm chart fetching the image from AWS ECR
-## Day 10: Install and deploy Jenkins on Kubernetes using Helm Charts.
+#### Projects 1: Day 8: Deploy the application in EKS using a Helm chart fetching the image from DockerHub
+#### Projects 2: Day 9: Deploy the application in EKS using a Helm chart fetching the image from AWS ECR
+#### Projects 3: Day 10: Install and deploy Jenkins on Kubernetes using Helm Charts.
