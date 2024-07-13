@@ -12,7 +12,11 @@ Helm simplifies Kubernetes deployment by packaging applications and their depend
 
 ## Without and With Helm Chart
 - **Without Helm**: Manual creation and management of Kubernetes YAML manifests for each resource.
+![Without Helm Chart - Tech World with Murali - Moole Muralidhara Reddy.png](https://github.com/techworldwithmurali/helm-zero-to-hero/blob/main/Day-1/images/Day%20%201-%20Without%20Helm%20chart-%20Moole%20Muralidhara%20Reddy%20-%20Tech%20World%20with%20Murali.png)
+
 - **With Helm Chart**: Applications are packaged into reusable Helm charts, including templates for Kubernetes manifests, values files, and metadata.
+
+![With Helm Chart - Tech World with Murali - Moole Muralidhara Reddy.png](https://github.com/techworldwithmurali/helm-zero-to-hero/blob/main/Day-1/images/Day%20%201-%20With%20Helm%20chart-%20Moole%20Muralidhara%20Reddy%20-%20Tech%20World%20with%20Murali.png)
 
 ## Difference between Helm 2 and Helm 3
 - **Helm 2**:
