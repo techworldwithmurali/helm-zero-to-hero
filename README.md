@@ -1,42 +1,48 @@
-## Deploy a sample application using Helm 2
-To deploy a sample application using Helm 2, you'll need to have a Helm chart ready that defines your application's deployment configuration. Here’s a basic example assuming you have a Helm chart prepared:
+## Deploy the application in EKS using a Helm chart fetching the image from DockerHub
 
-1. **Prepare Your Helm Chart:**
-   - Ensure your Helm chart (`Chart.yaml`, `values.yaml`, and `templates/` directory) is set up correctly. You can create one using `helm create` command as shown earlier.
+### Prerequisites:
++ Git is installed
++ Maven is installed
++ Docker is installed
++ DockerHub repository is created
++ AWS EKS is created
++ IAM User is created
++ kubectl is installed
++ aws cli is installed
++ Helm3 is installed
 
-2. **Initialize Helm (if not already done):**
-   - If you haven't initialized Helm yet, you can do so with:
-     ```bash
-     helm init
-     ```
-
-3. **Install the Helm Chart:**
-   - Assuming your Helm chart is named `sample-chart` and is located in the current directory, install it using:
-     ```bash
-     helm install my-app ./sample-chart
-     ```
-   - Here, `my-app` is the release name for your application. Replace `sample-chart` with the actual path to your Helm chart if it's located elsewhere.
-
-4. **Verify Deployment:**
-   - Check the status of your deployed release to ensure everything is running smoothly:
-     ```bash
-     helm status my-app
-     ```
-
-5. **Access the Application:**
-   - Depending on your application, access it through a service exposed via Kubernetes. You can find service details using `kubectl get svc` if your chart exposes services.
-
-6. **Manage Application Lifecycle:**
-   - Use Helm commands to manage your application's lifecycle as needed:
-     - **Upgrade** the release:
-       ```bash
-       helm upgrade my-app ./sample-chart
-       ```
-     - **Rollback** to a previous revision:
-       ```bash
-       helm rollback my-app 1
-       ```
-     - **Uninstall** the release:
-       ```bash
-       helm delete my-app
-       ```
+### Step 1: Clone the repository
+```xml
+  github url: https://github.com/techworldwithmurali/java-application.git
+```
+### Step 2: build the code
+```xml
+mvn package
+```
+### Step 3: Create the repository in DockerHub
+```xml
+Repository Name: web-application
+```
+### Step 4: Write the Dockerfile
+```xml
+FROM tomcat:9
+RUN apt update
+WORKDIR /usr/local/tomcat
+ADD target/*.war webapps/
+EXPOSE 8080
+CMD ["catalina.sh", "run"]
+```
+### Step 5: Build and tag the Docker image
+```xml
+docker build . --tag web-application:latest
+docker tag web-application:latest mmreddy424/web-application:latest
+```
+### Step 6: Login to DockerHub in local
+```xml
+docker login
+```
+### Step 7: Push the docker image to DockerHub
+```xml
+docker push mmreddy424/web-application:latest
+```
+### Step 8: Verify whether docker image is pushed or not in DockerHub
